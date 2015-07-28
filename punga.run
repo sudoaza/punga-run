@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+
+./internal.sh & ./external.sh & ./routes.sh & ./router.sh
+wait
+# intentar entrar al panel de administracion
+# escanear las redes y clientes wifi
