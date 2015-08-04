@@ -7,7 +7,7 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-nmap -traceroute -p 80 telecom.com.ar >> "$ROUTES"
-nmap -traceroute -p 80 telefonica.com.ar >> "$ROUTES"
+nmap -traceroute -p 80 -n --max-retries 0 200.51.211.7 >> "$ROUTES"
+nmap -traceroute -p 80 -n --max-retries 0 200.45.191.35 >> "$ROUTES"
 
 echo `wc -l "$ROUTES"`

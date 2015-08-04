@@ -18,7 +18,7 @@ echo `wc -l "$INTERNAL"`
 
 while read line
 do
-  nmap -Pn -p 21,22,23,80,139,443,445,3306,5000,8000,8080 -T5 --open --max-retries 0 -oG - "${line}/24" 1>> "${HOSTS}";
+  nmap -Pn -p 21,22,23,80,139,443,445,3306,5000,8000,8080 -n -T5 --open --max-retries 0 -oG - "${line}/24" 1>> "${HOSTS}";
 done < "$INTERNAL"
 
 echo `wc -l "$HOSTS"`

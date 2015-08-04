@@ -10,6 +10,6 @@ fi
 # identificar el router
 route -n | grep ^0\.0\.0\.0 | grep -Eo "$IPREGEX" | head -n 2 | tail -n 1 > "$ROUTER"
 IP=$(head -n 1 "$ROUTER")
-nmap -Pn --top-ports 2000 --open --max-retries 0 -O -oG - "$IP" 1>> "$ROUTER"
+nmap -Pn -n --top-ports 1300 --open --max-retries 0 -O -oG - "$IP" 1>> "$ROUTER"
 
 echo `wc -l "$ROUTER"`

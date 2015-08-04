@@ -21,7 +21,7 @@ mv "${EXTERNAL}_t" "$EXTERNAL"
 
 while read line
 do
-  nmap -Pn --top-ports 2000 --open --max-retries 0 -oG - "${line}" 1>> "${HOSTS}";
+  nmap -Pn --top-ports 100 --open --max-retries 0 -oG - "${line}" 1>> "${ROUTER}";
 done < "$EXTERNAL"
 
 echo `wc -l "$HOSTS"`
